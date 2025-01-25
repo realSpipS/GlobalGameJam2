@@ -22,6 +22,7 @@ public class Bubble : MonoBehaviour
 
         if(relic){
             relic.transform.position = transform.position;
+            relic.transform.rotation = transform.rotation;
         }
     }
 
