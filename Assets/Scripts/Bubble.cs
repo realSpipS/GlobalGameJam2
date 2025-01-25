@@ -23,14 +23,7 @@ public class Bubble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.collider.TryGetComponent(out Bubble bubble)){
-            Debug.Log(transform.localScale.x + " e " + other.transform.localScale.x);
-            if (transform.localScale.x > other.transform.localScale.x){
-                transform.localScale += other.transform.localScale/2;
-            }
-            else{
-                Destroy(gameObject);
-            }
-            //transform.position = Vector3.Normalize(other.collider.transform.position - transform.position) + transform.position;
+            BubbleManager.instance.AddContact(gameObject);
         }
     }
 
