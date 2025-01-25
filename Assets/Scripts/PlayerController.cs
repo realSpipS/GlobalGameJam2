@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] GameObject bubblePrefab;
     [SerializeField] Transform firePos;
+    //[SerializeField] Sprite sprite;
     [SerializeField] int speed = 1;
     [SerializeField] float gunRange = 1;
     [SerializeField] float pushForce = 1;
@@ -32,7 +34,9 @@ public class Player : MonoBehaviour
 
         fire1 = Input.GetAxis("Fire1");
 
-        transform.Translate(h_mov * speed, v_mov * speed, 0);
+        Vector3 direction = new Vector3(h_mov, v_mov, 0).normalized * speed;
+
+        transform.Translate(direction * Time.deltaTime, Space.World);
 
         if(Input.GetMouseButtonDown(1)){
             Instantiate(bubblePrefab, firePos.position, Quaternion.identity, transform.parent);
@@ -66,9 +70,13 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate() {
         transform.position += Vector3.down * Time.deltaTime * gravity;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 dir = (mousePos - new Vector2(transform.position.x, transform.position.y)).normalized;
+
+        if (dir.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
+        else transform.rotation = Quaternion.Euler(0, 0, 0);
+
         if(fire1 > 0){
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            Vector2 dir = (mousePos - new Vector2(transform.position.x, transform.position.y)).normalized;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, gunRange);
             if (hit){
                 if (hit.collider.TryGetComponent(out Bubble bubble)){
