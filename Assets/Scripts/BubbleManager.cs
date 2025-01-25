@@ -49,7 +49,7 @@ public class BubbleManager : MonoBehaviour
         Vector3 scdScale = contacts[1].transform.localScale;
 
         if(fstScale.x == scdScale.x){
-            contacts[0].transform.localScale += contacts[1].transform.localScale/2;
+            contacts[0].transform.localScale += contacts[1].transform.localScale/3;
             contacts[0].transform.position = (contacts[0].transform.position + contacts[1].transform.position)/2;
             Destroy(contacts[1].gameObject);
         }

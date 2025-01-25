@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] Text scoreText;
+    [SerializeField] Text endText;
     public static UIManager instance;
 
     private void Awake() {
@@ -16,13 +16,16 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Start() {
+        endText.text = "";
     }
 
     public void SetScoreText(int score){
         scoreText.text = "Score: " + score;
+    }
+
+    public void ShowEndText(){
+        endText.enabled = true;
+        endText.text = "You recovered " + Globals.relics + " relics\nTotal value: " + Globals.score;
     }
 }
