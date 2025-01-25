@@ -33,12 +33,19 @@ public class Bubble : MonoBehaviour
 
     public void Pop(){
         GetComponentInChildren<SpriteRenderer>().sprite = popSprite;
+        GetComponent<Collider2D>().isTrigger = true;
+        if(relic) relic.GetComponent<Collider2D>().isTrigger = false;
         StartCoroutine(WaitForDestroy());
     }
 
     IEnumerator WaitForDestroy(){
         yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
+    }
+
+    public bool HasRelic(){
+        if(relic) return true;
+        else return false;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

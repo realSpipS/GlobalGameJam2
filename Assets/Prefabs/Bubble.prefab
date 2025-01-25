@@ -198,5 +198,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  popSprite: {fileID: 0}
+  popSprite: {fileID: 5435921867156881161, guid: fdad5d0512097ba4fa7fd8f22c3b9393, type: 3}
   popSfx: {fileID: 8300000, guid: 123b08ff2d8f5d24ea7c8eed192cffa3, type: 3}

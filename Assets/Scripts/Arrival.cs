@@ -15,10 +15,10 @@ public class Arrival : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("TRIGGERANDO CON " + other.gameObject);
         if(other.gameObject.CompareTag("Relic")){
             Relic relic = other.gameObject.GetComponent<Relic>();
             Globals.score += relic.GetValue();
+            UIManager.instance.SetScoreText(Globals.score);
             Destroy(relic.gameObject);
         }
     }

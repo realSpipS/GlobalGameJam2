@@ -34,8 +34,20 @@ public class BubbleManager : MonoBehaviour
         audioSource.Play();
         
         Debug.Log("Contact between " + contacts[0] + " and " + contacts[1]);
+
+        Bubble bubble1 = contacts[0].GetComponent<Bubble>();
+        Bubble bubble2 = contacts[1].GetComponent<Bubble>();
+
+        if(bubble1.HasRelic() && bubble2.HasRelic()){
+            bubble1.Pop();
+            bubble2.Pop();
+            contacts.Clear();
+            return;
+        }
+
         Vector3 fstScale = contacts[0].transform.localScale;
         Vector3 scdScale = contacts[1].transform.localScale;
+
         if(fstScale.x == scdScale.x){
             contacts[0].transform.localScale += contacts[1].transform.localScale/2;
             contacts[0].transform.position = (contacts[0].transform.position + contacts[1].transform.position)/2;
