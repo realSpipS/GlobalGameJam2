@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
     [SerializeField] float speed = 1;
+    [SerializeField] Sprite popSprite;
     GameObject relic = null;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +28,16 @@ public class Bubble : MonoBehaviour
         }
     }
 
+    public void Pop(){
+        GetComponentInChildren<SpriteRenderer>().sprite = popSprite;
+        StartCoroutine(WaitForDestroy());
+    }
+
+    IEnumerator WaitForDestroy(){
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.collider.TryGetComponent(out Bubble bubble)){
             BubbleManager.instance.AddContact(gameObject);
@@ -37,10 +49,11 @@ public class Bubble : MonoBehaviour
                 Debug.Log(other.collider.bounds.size.x);
                 Debug.Log(myCollider.bounds.size.x);
                 relic = other.gameObject;
-                relic.GetComponent<Collider2D>().enabled = false;
-            }  
+                relic.GetComponent<Collider2D>().isTrigger = true;
+                relic.GetComponent<Relic>().SetBubble(gameObject);
+            } 
             else{
-                Destroy(gameObject);
+                Pop();
             } 
         }
     }
