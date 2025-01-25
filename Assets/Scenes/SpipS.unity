@@ -459,6 +459,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4006479307650223831, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
+      propertyPath: blowBubble
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f64558e56cdd7549844e17bd7757774, type: 3}
+    - target: {fileID: 4006479307650223831, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
+      propertyPath: growBubble
+      value: 
+      objectReference: {fileID: 8300000, guid: a7c8412185638874bb7e2487ff086269, type: 3}
     - target: {fileID: 7663508066213339688, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.06

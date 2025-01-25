@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     //sound
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip blowBubble;
+    [SerializeField] AudioClip growBubble;
+    private bool blowing = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,9 +36,30 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1)){
             Instantiate(bubblePrefab, firePos.position, Quaternion.identity, transform.parent);
-            source.clip = blowBubble;
+            source.clip = growBubble;
             source.Play();
         }
+
+        
+        if(Input.GetButtonDown("Fire1")){
+            if(!blowing){
+                source.clip = blowBubble;
+                source.Play();
+                blowing = true;
+
+            }
+        }
+        
+        if(Input.GetButtonUp("Fire1")){
+            if(blowing){
+                blowing = false;
+                source.Stop();
+                source.clip = blowBubble;
+                PlaySoundAtTime(19.300f);
+            }
+            
+        }
+        
     }
 
     private void FixedUpdate() {
@@ -59,6 +82,15 @@ public class Player : MonoBehaviour
             Vector2 dir = (mousePos - new Vector2(transform.position.x, transform.position.y)).normalized;
 
             Gizmos.DrawRay(transform.position, dir * gunRange);
+        }
+    }
+
+    void PlaySoundAtTime(float timeWanted){
+        if(timeWanted > source.clip.length)
+            return;
+        else{
+            source.time = timeWanted;
+            source.Play();
         }
     }
 }
