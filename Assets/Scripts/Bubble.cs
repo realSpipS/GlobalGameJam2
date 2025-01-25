@@ -53,7 +53,7 @@ public class Bubble : MonoBehaviour
             BubbleManager.instance.AddContact(gameObject);
         }
 
-        if(other.gameObject.CompareTag("Relic")){
+        if(other.gameObject.CompareTag("Relic") && !relic){
             Collider2D myCollider = GetComponent<CircleCollider2D>();
             if (other.collider.bounds.size.x + 0.5f < myCollider.bounds.size.x){
                 Debug.Log(other.collider.bounds.size.x);

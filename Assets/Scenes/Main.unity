@@ -537,6 +537,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Relic (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4911665309875671447, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3325123090996159753, guid: d914253ea118cc248a37846cb4daa83e, type: 3}
+    - target: {fileID: 6978257424460023079, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978257424460023079, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978257424460023079, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978257424460023079, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7405671267513505254, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.97
@@ -1139,8 +1159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -86.0249, y: -24.9033}
-  m_SizeDelta: {x: 171.2497, y: 49.6066}
+  m_AnchoredPosition: {x: -108.86664, y: -49.920517}
+  m_SizeDelta: {x: 216.9332, y: 99.641}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971610827
 MonoBehaviour:
