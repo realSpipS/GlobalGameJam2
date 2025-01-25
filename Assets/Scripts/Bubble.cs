@@ -55,7 +55,8 @@ public class Bubble : MonoBehaviour
 
         if(other.gameObject.CompareTag("Relic") && !relic){
             Collider2D myCollider = GetComponent<CircleCollider2D>();
-            if (other.collider.bounds.size.x + 0.5f < myCollider.bounds.size.x){
+            float percent = other.collider.bounds.size.x/12;
+            if (other.collider.bounds.size.magnitude + percent < myCollider.bounds.size.x){
                 Debug.Log(other.collider.bounds.size.x);
                 Debug.Log(myCollider.bounds.size.x);
                 relic = other.gameObject;

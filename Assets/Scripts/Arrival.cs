@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Arrival : MonoBehaviour
 {
@@ -35,6 +36,6 @@ public class Arrival : MonoBehaviour
 
     IEnumerator EndGame(){
         yield return new WaitForSeconds(3);
-        //Go to Main Menu
+        SceneManager.LoadScene(0);
     }
 }
