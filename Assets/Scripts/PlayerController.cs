@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
         
         if(Input.GetButtonDown("Fire1")){
             if(!blowing){
+                source.loop = true;
                 source.clip = blowBubble;
                 source.Play();
                 blowing = true;
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
         
         if(Input.GetButtonUp("Fire1")){
             if(blowing){
+                source.loop = false;
                 blowing = false;
                 source.Stop();
                 source.clip = blowBubble;
