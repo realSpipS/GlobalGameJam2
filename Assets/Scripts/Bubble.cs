@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     [SerializeField] float speed = 1;
-    bool main = false;
+    GameObject relic = null;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,15 +19,28 @@ public class Bubble : MonoBehaviour
     private void FixedUpdate() {
         //Vector3 newPos = Vector3(transform.position.x, transform.position.y, 0);
         transform.position += Vector3.up * speed * Time.deltaTime;
+
+        if(relic){
+            relic.transform.position = transform.position;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.collider.TryGetComponent(out Bubble bubble)){
             BubbleManager.instance.AddContact(gameObject);
         }
-    }
 
-    public bool isMain(){
-        return main;
+        if(other.gameObject.CompareTag("Relic")){
+            Collider2D myCollider = GetComponent<CircleCollider2D>();
+            if (other.collider.bounds.size.x + 0.5f < myCollider.bounds.size.x){
+                Debug.Log(other.collider.bounds.size.x);
+                Debug.Log(myCollider.bounds.size.x);
+                relic = other.gameObject;
+                relic.GetComponent<Collider2D>().enabled = false;
+            }  
+            else{
+                Destroy(gameObject);
+            } 
+        }
     }
 }

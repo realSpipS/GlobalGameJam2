@@ -1,14 +1,17 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] GameObject bubblePrefab;
+    [SerializeField] Transform firePos;
     [SerializeField] int speed = 1;
     [SerializeField] float gunRange = 1;
     [SerializeField] float pushForce = 1;
     float gravity = 0.5f;
     float fire1 = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +27,10 @@ public class Player : MonoBehaviour
         fire1 = Input.GetAxis("Fire1");
 
         transform.Translate(h_mov * speed, v_mov * speed, 0);
+
+        if(Input.GetMouseButtonDown(1)){
+            Instantiate(bubblePrefab, firePos.position, Quaternion.identity, transform.parent);
+        }
     }
 
     private void FixedUpdate() {
