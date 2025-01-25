@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.collider.TryGetComponent(out Bubble bubble)){
-            Destroy(bubble.gameObject);
+            bubble.Pop();
         }
     }
 }
