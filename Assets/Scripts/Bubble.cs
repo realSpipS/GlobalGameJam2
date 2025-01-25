@@ -61,7 +61,7 @@ public class Bubble : MonoBehaviour
         }
     }
 
-    private void OnDestry(){
+    private void OnDestroy(){
         StartDyingSFX();
     }
 
@@ -69,6 +69,7 @@ public class Bubble : MonoBehaviour
         GameObject aud = new GameObject();
         aud.gameObject.tag = "EmptySoundObj";
         aud.AddComponent<AudioSource>();
+        //in base alla profondità cambia la clip del suono
         aud.GetComponent<AudioSource>().clip = popSfx;
         aud.GetComponent<AudioSource>().volume = 0.2f;
         aud.GetComponent<AudioSource>().Play();
