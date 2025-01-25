@@ -459,14 +459,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4006479307650223831, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
-      propertyPath: gunRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006479307650223831, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
-      propertyPath: pushForce
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7663508066213339688, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.06

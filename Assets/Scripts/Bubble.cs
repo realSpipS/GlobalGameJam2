@@ -6,6 +6,9 @@ public class Bubble : MonoBehaviour
     [SerializeField] float speed = 1;
     [SerializeField] Sprite popSprite;
     GameObject relic = null;
+
+    [SerializeField] AudioClip popSfx;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,5 +59,18 @@ public class Bubble : MonoBehaviour
                 Pop();
             } 
         }
+    }
+
+    private void OnDestry(){
+        StartDyingSFX();
+    }
+
+    private void StartDyingSFX(){
+        GameObject aud = new GameObject();
+        aud.gameObject.tag = "EmptySoundObj";
+        aud.AddComponent<AudioSource>();
+        aud.GetComponent<AudioSource>().clip = popSfx;
+        aud.GetComponent<AudioSource>().volume = 0.2f;
+        aud.GetComponent<AudioSource>().Play();
     }
 }

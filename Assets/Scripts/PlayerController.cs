@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     float gravity = 0.5f;
     float fire1 = 0;
 
+    //sound
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip blowBubble;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,6 +34,8 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1)){
             Instantiate(bubblePrefab, firePos.position, Quaternion.identity, transform.parent);
+            source.clip = blowBubble;
+            source.Play();
         }
     }
 
