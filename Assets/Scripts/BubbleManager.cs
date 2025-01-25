@@ -5,6 +5,8 @@ public class BubbleManager : MonoBehaviour
 {
     List<GameObject> contacts;
     public static BubbleManager instance;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip mergeSound;
 
     private void Awake() {
         if (instance != null && instance != this){
@@ -27,6 +29,9 @@ public class BubbleManager : MonoBehaviour
     }
 
     void BubbleCollision(){
+        audioSource.clip = mergeSound;
+        audioSource.Play();
+
         Debug.Log("Contact between " + contacts[0] + " and " + contacts[1]);
         Vector3 fstScale = contacts[0].transform.localScale;
         Vector3 scdScale = contacts[1].transform.localScale;
