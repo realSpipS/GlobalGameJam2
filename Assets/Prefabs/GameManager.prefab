@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689650468581652473}
   - component: {fileID: 5401794849126045905}
+  - component: {fileID: 8788471306975232518}
   - component: {fileID: 1910388710922695359}
   m_Layer: 0
   m_Name: GameManager
@@ -47,6 +48,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1910388710922695359}
   mergeSound: {fileID: 8300000, guid: 8272ae3572d231344ac32266b06b5fa5, type: 3}
+--- !u!114 &8788471306975232518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894292273791236373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95275f28fb351e41ac246cb4423e779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  endText: {fileID: 0}
+  airBar: {fileID: 0}
+  menu: {fileID: 0}
 --- !u!82 &1910388710922695359
 AudioSource:
   m_ObjectHideFlags: 0

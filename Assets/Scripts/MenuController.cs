@@ -4,12 +4,6 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     public void StartGame(){
         SceneManager.LoadScene(1);
     }
@@ -19,6 +13,6 @@ public class MenuController : MonoBehaviour
     }
 
     public void CloseGame(){
-        //SceneManager.LoadScene("Main");
+        Application.Quit();
     }
 }

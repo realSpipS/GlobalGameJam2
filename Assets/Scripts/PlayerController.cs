@@ -51,6 +51,10 @@ public class Player : MonoBehaviour
             currentBubble = null;
             blowing = false;
         }
+
+        if(Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.P)){
+            UIManager.instance.Menu();
+        }
         
         if(Input.GetButtonDown("Fire1")){
             if(!blowing){
