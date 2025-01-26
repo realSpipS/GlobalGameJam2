@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
@@ -6,30 +6,56 @@ public class MusicManager : MonoBehaviour
     [SerializeField] AudioSource[] audioSource = new AudioSource[4];
     public static MusicManager instance;
 
+    private float fadeDuration = 2f; 
+
     private void Awake() {
-        if (instance != null && instance != this){
+        if (instance != null && instance != this) {
             Destroy(gameObject);
-        }
-        else{
+        } else {
             instance = this;
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        foreach(AudioSource source in audioSource){
+    void Start() {
+        foreach (AudioSource source in audioSource) {
             source.Play();
             source.volume = 0;
         }
 
+        
         audioSource[0].volume = 0.5f;
     }
 
-    public void ChangeMusic(int index){
-        foreach(AudioSource source in audioSource){
-            source.volume = 0;
+    
+    public void ChangeMusic(int index) {
+        StartCoroutine(FadeOutOtherTracks(index)); 
+        StartCoroutine(FadeIn(audioSource[index]));  
+    }
+
+    private IEnumerator FadeOutOtherTracks(int activeIndex) {
+        foreach (AudioSource source in audioSource) {
+            if (source != audioSource[activeIndex]) {
+                float startVolume = source.volume;
+
+                while (source.volume > 0) {
+                    source.volume -= startVolume * Time.deltaTime / fadeDuration;
+                    yield return null;
+                }
+
+                source.volume = 0;
+            }
         }
-        audioSource[index].volume = 0.5f;
+    }
+
+    private IEnumerator FadeIn(AudioSource newSource) {
+        float targetVolume = 0.5f;  
+        newSource.volume = 0; 
+
+        while (newSource.volume < targetVolume) {
+            newSource.volume += Time.deltaTime / fadeDuration;
+            yield return null;
+        }
+
+        newSource.volume = targetVolume; 
     }
 }
