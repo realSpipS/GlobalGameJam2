@@ -54,12 +54,24 @@ public class BubbleManager : MonoBehaviour
             Destroy(contacts[1].gameObject);
         }
         else if(fstScale.x > scdScale.x){
-            contacts[0].transform.localScale += contacts[1].transform.localScale/2;
-            Destroy(contacts[1].gameObject);
+            if(bubble2.HasRelic()) {
+                bubble1.Pop();
+                bubble2.Pop();
+            }
+            else{
+                contacts[0].transform.localScale += contacts[1].transform.localScale/2;
+                Destroy(contacts[1].gameObject);
+            }        
         }
         else {
-            contacts[1].transform.localScale += contacts[0].transform.localScale/2;
-            Destroy(contacts[0].gameObject);
+            if(bubble1.HasRelic()) {
+                bubble1.Pop();
+                bubble2.Pop();
+            }
+            else{
+                contacts[1].transform.localScale += contacts[0].transform.localScale/2;
+                Destroy(contacts[0].gameObject);
+            }       
         }
 
         contacts.Clear();

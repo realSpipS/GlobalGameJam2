@@ -8,17 +8,11 @@ public class Bubble : MonoBehaviour
     GameObject relic = null;
 
     [SerializeField] AudioClip popSfx;
+    Collider2D myCollider;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Start() {
+        myCollider = GetComponent<CircleCollider2D>();
     }
 
     private void FixedUpdate() {
@@ -28,6 +22,10 @@ public class Bubble : MonoBehaviour
         if(relic){
             relic.transform.position = transform.position;
             relic.transform.rotation = transform.rotation;
+
+            Collider2D relicColl = relic.GetComponent<Collider2D>();
+            float percent = relicColl.bounds.size.x/12;
+            if(relicColl.bounds.size.magnitude + percent >= myCollider.bounds.size.x) Pop();
         }
     }
 

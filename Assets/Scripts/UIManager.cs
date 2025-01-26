@@ -5,7 +5,9 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] Text scoreText;
     [SerializeField] Text endText;
+    [SerializeField] Slider airBar;
     public static UIManager instance;
+    Player player;
 
     private void Awake() {
         if (instance != null && instance != this){
@@ -18,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     private void Start() {
         endText.text = "";
+        player = FindFirstObjectByType<Player>();
     }
 
     public void SetScoreText(int score){
@@ -27,5 +30,10 @@ public class UIManager : MonoBehaviour
     public void ShowEndText(){
         endText.enabled = true;
         endText.text = "You recovered " + Globals.relics + " relics\nTotal value: " + Globals.score;
+    }
+
+    public void UpdateBar(int maxAmount, int amount){
+        airBar.maxValue = maxAmount;
+        airBar.value = amount;
     }
 }
