@@ -56,10 +56,11 @@ MonoBehaviour:
   speed: 3
   gunRange: 5
   pushForce: 2
-  maxAirStorage: 1000
-  lifes: 0
+  maxAirStorage: 2000
+  lifes: 3
   loseText: {fileID: 0}
   canGetHit: 0
+  gotHit: 0
   source: {fileID: 1673073598348036822}
   blowBubble: {fileID: 8300000, guid: a7c8412185638874bb7e2487ff086269, type: 3}
   growBubble: {fileID: 0}

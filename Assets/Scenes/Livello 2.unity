@@ -176,6 +176,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
+--- !u!4 &23265136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1381889834803824467, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
+  m_PrefabInstance: {fileID: 23265135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &179216623 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3642502880045825227, guid: 24f5b5189c3643047bfade8622d30c8b, type: 3}
@@ -243,6 +248,14 @@ PrefabInstance:
     - target: {fileID: 2770144189785349976, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312431247112221240, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
+      propertyPath: finish
+      value: 
+      objectReference: {fileID: 23265136}
+    - target: {fileID: 5312431247112221240, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
+      propertyPath: offset
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 5312431247112221240, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
       propertyPath: target
