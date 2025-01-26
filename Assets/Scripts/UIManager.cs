@@ -54,4 +54,9 @@ public class UIManager : MonoBehaviour
     public void Options(){
         //SceneManager.LoadScene("Main");
     }
+
+    public void EndGame(){
+        endText.enabled = true;
+        endText.text = "You recovered " + Globals.relics + " relics\nTotal score: " + Globals.score + "\n Thank you for playing!";
+    }
 }

@@ -12,12 +12,6 @@ public class Arrival : MonoBehaviour
         endCoroutine = EndGame();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log(other.gameObject);
         if(other.gameObject.CompareTag("Relic")){
@@ -29,13 +23,27 @@ public class Arrival : MonoBehaviour
         }
 
         if(other.gameObject.TryGetComponent(out Player player)){
-            UIManager.instance.ShowEndText();
+            int currScene = SceneManager.GetActiveScene().buildIndex;
+            if(currScene == 3){
+                UIManager.instance.EndGame();
+            }
+            else{
+                UIManager.instance.ShowEndText();
+            }
+            
             if(!ending) StartCoroutine(EndGame());
         }
     }
 
     IEnumerator EndGame(){
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(4);
+        int currScene = SceneManager.GetActiveScene().buildIndex;
+        if(currScene == 3){
+            SceneManager.LoadScene(0);
+        }
+        else{
+            SceneManager.LoadScene(currScene + 1);
+        }
+        
     }
 }
