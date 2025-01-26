@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     [SerializeField] private int lifes;
+    [SerializeField] private Text loseText;
+    private bool canGetHit;
 
     //sound
     [SerializeField] AudioSource source;
@@ -31,6 +34,7 @@ public class Player : MonoBehaviour
     private bool fire2Pressed = false;
 
     private void Start() {
+        canGetHit = true;
         rb = GetComponent<Rigidbody2D>();
         airStorage = maxAirStorage;
     }
@@ -86,7 +90,10 @@ public class Player : MonoBehaviour
         }
 
         if(lifes <= 0){
-            //fine gioco
+            //fine gioco spawna scritta fine gioco e dopo x secondi torna al menu
+            loseText.enabled = true;
+            StartCoroutine(WaitThenMenu());
+
         }
         
     }
@@ -193,5 +200,23 @@ public class Player : MonoBehaviour
             airStorage = maxAirStorage;
         }
         UIManager.instance.UpdateBar(maxAirStorage, airStorage);
+    }
+
+    IEnumerator WaitThenMenu(){
+         yield return new WaitForSeconds(5f);
+          SceneManager.LoadScene(0); //return to menu
+    }
+
+    public void GetHit(){
+        lifes -= 1;
+        canGetHit = false;
+        Color tmp  = gameObject.GetComponentOfChildren<SpriteRenderer>().color;
+        Color blank = tmp;
+        tmp.a = 0f;
+        gameObject.GetComponentOfChildren<SpriteRenderer>().color = blank;
+        gameObject.GetComponentOfChildren<SpriteRenderer>().color = tmp;
+        gameObject.GetComponentOfChildren<SpriteRenderer>().color = blank;
+        gameObject.GetComponentOfChildren<SpriteRenderer>().color = tmp;
+        canGetHit = true;
     }
 }

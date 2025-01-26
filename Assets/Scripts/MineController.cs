@@ -6,7 +6,10 @@ public class MineController : MonoBehaviour
         if(other.collider.TryGetComponent(out Bubble bubble)){
             bubble.Pop();
         }
+        if(other.collider.CompareTag("Player")){
+            other.GetHit();
+        }
     }
 
-    
+
 }
