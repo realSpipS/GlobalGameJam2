@@ -53,7 +53,7 @@ public class Bubble : MonoBehaviour
             BubbleManager.instance.AddContact(gameObject);
         }
 
-        if(other.gameObject.CompareTag("Relic") && !relic){
+        else if(other.gameObject.CompareTag("Relic") && !relic){
             Collider2D myCollider = GetComponent<CircleCollider2D>();
             float percent = other.collider.bounds.size.x/12;
             if (other.collider.bounds.size.magnitude + percent < myCollider.bounds.size.x){
@@ -66,6 +66,9 @@ public class Bubble : MonoBehaviour
             else{
                 Pop();
             } 
+        }
+        else {
+            Pop();
         }
     }
 
