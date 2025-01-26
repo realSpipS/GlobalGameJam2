@@ -1,49 +1,10 @@
 fileFormatVersion: 2
-guid: fdad5d0512097ba4fa7fd8f22c3b9393
+guid: aa6395868379c10428ae32c10d9f6c2f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5712959122012955994
-    second: Bubble_0
-  - first:
-      213: 5435921867156881161
-    second: Bubble_1
-  - first:
-      213: -4870265009442684133
-    second: Bubble_2
-  - first:
-      213: -5572994966305385033
-    second: Bubble_3
-  - first:
-      213: 3403141494019581715
-    second: Bubble_4
-  - first:
-      213: -594048738490451725
-    second: Bubble_5
-  - first:
-      213: 202192575422197428
-    second: Bubble_6
-  - first:
-      213: 7907927230998996524
-    second: Bubble_7
-  - first:
-      213: -7186795469899899285
-    second: Bubble_8
-  - first:
-      213: 6590299901797142365
-    second: Bubble_9
-  - first:
-      213: -3663232725478290531
-    second: Bubble_10
-  - first:
-      213: -8875763432559473096
-    second: Bubble_11
-  - first:
-      213: 6821316095109485184
-    second: Bubble_12
-  - first:
-      213: 1460379025253301930
-    second: Bubble_13
+      213: -5911353617586206109
+    second: BOAT_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -76,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -152,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bubble_0
+      name: BOAT_01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
+        width: 5000
         height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -167,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6aa171472fd77b0b0800000000000000
-      internalID: -5712959122012955994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubble_1
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 1000
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 90ff9ae2326407b40800000000000000
-      internalID: 5435921867156881161
+      spriteID: 36acd0a5437a6fda0800000000000000
+      internalID: -5911353617586206109
       vertices: []
       indices: 
       edges: []
@@ -199,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a5e484a6caa85040b66f0d276a26eb4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -209,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bubble_0: -5712959122012955994
-      Bubble_1: 5435921867156881161
+      BOAT_01_0: -5911353617586206109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
