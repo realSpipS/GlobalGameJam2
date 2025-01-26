@@ -52,10 +52,14 @@ MonoBehaviour:
   bubblePrefab: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
   firePos: {fileID: 5818607267080253105}
   pushParticles: {fileID: 2589623582426071064}
+  spriteObj: {fileID: 5147494823968937058}
   speed: 3
   gunRange: 5
   pushForce: 2
   maxAirStorage: 1000
+  lifes: 0
+  loseText: {fileID: 0}
+  canGetHit: 0
   source: {fileID: 1673073598348036822}
   blowBubble: {fileID: 8300000, guid: a7c8412185638874bb7e2487ff086269, type: 3}
   growBubble: {fileID: 0}

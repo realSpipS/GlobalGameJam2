@@ -3,13 +3,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] GameObject bubblePrefab;
     [SerializeField] Transform firePos;
     [SerializeField] ParticleSystem pushParticles;
-    //[SerializeField] Sprite sprite;
+    [SerializeField] GameObject spriteObj;
     [SerializeField] int speed = 1;
     [SerializeField] float gunRange = 1;
     [SerializeField] float pushForce = 1;
@@ -22,9 +24,9 @@ public class Player : MonoBehaviour
     GameObject currentBubble;
     Rigidbody2D rb;
 
-    [SerializeField] private int lifes;
+    [SerializeField] public int lifes;
     [SerializeField] private Text loseText;
-    private bool canGetHit;
+    [SerializeField] bool canGetHit;
 
     //sound
     [SerializeField] AudioSource source;
@@ -210,13 +212,13 @@ public class Player : MonoBehaviour
     public void GetHit(){
         lifes -= 1;
         canGetHit = false;
-        Color tmp  = gameObject.GetComponentOfChildren<SpriteRenderer>().color;
+        Color tmp  = spriteObj.GetComponent<SpriteRenderer>().color;
         Color blank = tmp;
         tmp.a = 0f;
-        gameObject.GetComponentOfChildren<SpriteRenderer>().color = blank;
-        gameObject.GetComponentOfChildren<SpriteRenderer>().color = tmp;
-        gameObject.GetComponentOfChildren<SpriteRenderer>().color = blank;
-        gameObject.GetComponentOfChildren<SpriteRenderer>().color = tmp;
+        spriteObj.GetComponent<SpriteRenderer>().color = blank;
+        spriteObj.GetComponent<SpriteRenderer>().color = tmp;
+        spriteObj.GetComponent<SpriteRenderer>().color = blank;
+        spriteObj.GetComponent<SpriteRenderer>().color = tmp;
         canGetHit = true;
     }
 }
