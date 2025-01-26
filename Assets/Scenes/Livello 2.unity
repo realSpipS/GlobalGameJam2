@@ -176,6 +176,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
+--- !u!114 &179216623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3642502880045825227, guid: 24f5b5189c3643047bfade8622d30c8b, type: 3}
+  m_PrefabInstance: {fileID: 1074283230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &255825044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,6 +875,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4006479307650223831, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
+      propertyPath: lifes
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006479307650223831, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
+      propertyPath: loseText
+      value: 
+      objectReference: {fileID: 179216623}
     - target: {fileID: 7663508066213339688, guid: 0fc804d7c10949e4eab272155427f381, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.645182

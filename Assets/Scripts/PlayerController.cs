@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     float fire2 = 0;
     float fire3 = 0;
     GameObject currentBubble;
+    float lastBubbleSize = 0;
     Rigidbody2D rb;
 
     [SerializeField] public int lifes;
@@ -59,8 +60,11 @@ public class Player : MonoBehaviour
         transform.Translate(direction * Time.deltaTime, Space.World);
 
         if (currentBubble.IsDestroyed()){
+            Debug.Log("enrtato");
+            IncAir(-(int)(lastBubbleSize*100));
+            lastBubbleSize = 0;
             currentBubble = null;
-            blowing = false;
+            blowing = false;         
         }
 
         if(Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.P)){
@@ -138,11 +142,11 @@ public class Player : MonoBehaviour
             if (!blowing && !fire2Pressed && airStorage >= 1){          
                 currentBubble = Instantiate(bubblePrefab, firePos.position, Quaternion.identity, transform.parent);
                 currentBubble.transform.localScale = Vector2.one/2;
-                float currentSize = currentBubble.transform.localScale.x;
+                lastBubbleSize = currentBubble.transform.localScale.x;
                 float angle = Mathf.Atan2(dir.y, dir.x);
 
-                currentBubble.transform.position = new Vector2(firePos.position.x + (currentSize / 2 * Mathf.Cos(angle)),
-                    firePos.position.y + (currentSize / 2 * Mathf.Sin(angle)));
+                currentBubble.transform.position = new Vector2(firePos.position.x + (lastBubbleSize / 2 * Mathf.Cos(angle)),
+                    firePos.position.y + (lastBubbleSize / 2 * Mathf.Sin(angle)));
 
                 blowing = true;
                 fire2Pressed = true;
@@ -150,6 +154,7 @@ public class Player : MonoBehaviour
             else if (blowing){
                 if (currentBubble.transform.localScale.x < 1.6f) 
                     currentBubble.transform.localScale += Vector3.one * 0.01f;
+                lastBubbleSize = currentBubble.transform.localScale.x;
 
                 float angle = Mathf.Atan2(dir.y, dir.x);
 
@@ -178,7 +183,7 @@ public class Player : MonoBehaviour
         currentBubble.GetComponent<Rigidbody2D>().AddForce(dir * 50);
         currentBubble.GetComponent<Bubble>().enabled = true;
         currentBubble.GetComponent<Collider2D>().enabled = true;
-        IncAir(-(int)currentBubble.transform.localScale.x * 2);
+        IncAir(-(int)(currentBubble.transform.localScale.x * 100));
         currentBubble = null;
         blowing = false;
     }
