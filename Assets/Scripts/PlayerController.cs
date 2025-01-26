@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     [SerializeField] public int lifes;
-    [SerializeField] private Text loseText;
+    [SerializeField] Text loseText;
     [SerializeField] bool canGetHit;
     [SerializeField] public bool gotHit;
 
@@ -100,8 +100,10 @@ public class Player : MonoBehaviour
 
         if(lifes <= 0){
             //fine gioco spawna scritta fine gioco e dopo x secondi torna al menu
-            loseText.enabled = true;
+            //loseText.enabled = true;
+            UIManager.instance.YouLose();
             StartCoroutine(WaitThenMenu());
+
 
         }
 

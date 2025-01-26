@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] Text scoreText;
     [SerializeField] Text endText;
+    [SerializeField] Text loseText;
     [SerializeField] Slider airBar;
     [SerializeField] GameObject menu;
     public static UIManager instance;
@@ -58,5 +59,10 @@ public class UIManager : MonoBehaviour
     public void EndGame(){
         endText.enabled = true;
         endText.text = "You recovered " + Globals.relics + " relics\nTotal score: " + Globals.score + "\n Thank you for playing!";
+    }
+
+    public void YouLose(){
+        endText.enabled = true;
+        endText.text = "You Died";
     }
 }
