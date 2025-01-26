@@ -1112,6 +1112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1381889834803824467, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 6014192515589740144, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
       propertyPath: m_Name
       value: Scene base

@@ -334,6 +334,44 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24f5b5189c3643047bfade8622d30c8b, type: 3}
+--- !u!1 &1074283231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7099287271623552259, guid: 24f5b5189c3643047bfade8622d30c8b, type: 3}
+  m_PrefabInstance: {fileID: 1074283230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1074283232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4876175538670079840, guid: 24f5b5189c3643047bfade8622d30c8b, type: 3}
+  m_PrefabInstance: {fileID: 1074283230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1074283233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9220847209513349918, guid: 24f5b5189c3643047bfade8622d30c8b, type: 3}
+  m_PrefabInstance: {fileID: 1074283230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1074283234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1613419439499982375, guid: 24f5b5189c3643047bfade8622d30c8b, type: 3}
+  m_PrefabInstance: {fileID: 1074283230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1095797767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,6 +595,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8788471306975232518, guid: 4957f356d0f90e54b9a4ddf6a60e2ba2, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 1074283231}
+    - target: {fileID: 8788471306975232518, guid: 4957f356d0f90e54b9a4ddf6a60e2ba2, type: 3}
+      propertyPath: airBar
+      value: 
+      objectReference: {fileID: 1074283232}
+    - target: {fileID: 8788471306975232518, guid: 4957f356d0f90e54b9a4ddf6a60e2ba2, type: 3}
+      propertyPath: endText
+      value: 
+      objectReference: {fileID: 1074283233}
+    - target: {fileID: 8788471306975232518, guid: 4957f356d0f90e54b9a4ddf6a60e2ba2, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1074283234}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
