@@ -31,41 +31,7 @@ public class EelController : EnemyController
     // Update is called once per frame
     void Update()
     {
-        /*
-        Vector2 point = currentPoint.position - transform.position;
-        if(currentPoint == pointB.transform){
-            rb.linearVelocity = new Vector2(speed, 0);
-        }else{
-            rb.linearVelocity = new Vector2(-speed, 0);
-        }
-
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
-        {
-            Flip();
-            currentPoint = pointA.transform;
-        }
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform){
-            currentPoint = pointB.transform;
-        }*/
-        
-        /*
-        if(isAttacking){
-            renderer.sprite = attackingSprite;
-        }else{
-            renderer.sprite = baseSprite;
-        }*/
-
-        /*
-        float step = speed * Time.deltaTime;
-        currentPosition = gameObject.transform.position;
-        if (currentPosition == pointB.transform.position)
-            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
-        else if(currentPosition == pointA.transform.position)
-            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
-        */
-        /*
-        StartCoroutine(isAttacking(attackCooldown));
-        StartCoroutine(isNotAttacking(attackDuration));*/
+    
     }
 
     private void Flip(){

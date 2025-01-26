@@ -32,9 +32,14 @@ public class EnemyController : MonoBehaviour
                 target = target == pointA.transform ? pointB.transform : pointA.transform;
                 yield return new WaitForSeconds(0.5f);
             }
+            if(target == pointB.transform){
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else{
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
             yield return null;
         }
-
     }
 
     /*
