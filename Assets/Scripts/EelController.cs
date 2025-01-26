@@ -3,11 +3,10 @@ using System.Collections;
 
 public class EelController : EnemyController
 {
-    [SerializeField] GameObject pointA;
-    [SerializeField] GameObject pointB;
+    
     private Rigidbody2D rb;
-    private Transform currentPoint;
-    [SerializeField] float speed;
+    //private Transform currentPoint;
+    private Vector3 currentPosition;
     [SerializeField] float attackCooldown;
     [SerializeField] float attackDuration;
 
@@ -24,12 +23,15 @@ public class EelController : EnemyController
     {
         renderer = SpriteObject.GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        currentPoint = pointB.transform;
+        //currentPoint = pointB.transform;
+        currentPosition = gameObject.transform.position;
+        StartCoroutine(Patroll());
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         Vector2 point = currentPoint.position - transform.position;
         if(currentPoint == pointB.transform){
             rb.linearVelocity = new Vector2(speed, 0);
@@ -44,7 +46,7 @@ public class EelController : EnemyController
         }
         if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform){
             currentPoint = pointB.transform;
-        }
+        }*/
         
         /*
         if(isAttacking){
@@ -53,8 +55,17 @@ public class EelController : EnemyController
             renderer.sprite = baseSprite;
         }*/
 
+        /*
+        float step = speed * Time.deltaTime;
+        currentPosition = gameObject.transform.position;
+        if (currentPosition == pointB.transform.position)
+            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
+        else if(currentPosition == pointA.transform.position)
+            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, step);
+        */
+        /*
         StartCoroutine(isAttacking(attackCooldown));
-        StartCoroutine(isNotAttacking(attackDuration));
+        StartCoroutine(isNotAttacking(attackDuration));*/
     }
 
     private void Flip(){
@@ -63,11 +74,6 @@ public class EelController : EnemyController
         transform.localScale = localScale;
     }
 
-    private void OnDrawGizmos(){
-        Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
-        Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
-        Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
-    }
     /*
     IEnumerator attackLoop(float cooldown, float attackTime){
         yield return new WaitForSeconds(cooldown);
@@ -85,7 +91,7 @@ public class EelController : EnemyController
 
     IEnumerator isAttacking(float cooldown){
         Debug.Log("ISATTACKING");
-        renderer.sprite = attackingSprite;
+        SpriteObject.GetComponent<SpriteRenderer>().sprite = baseSprite;
         yield return new WaitForSeconds(cooldown);
         
         
@@ -93,8 +99,9 @@ public class EelController : EnemyController
 
     IEnumerator isNotAttacking(float attackTime){
         Debug.Log("ISNOTATTACKING");
-        renderer.sprite = baseSprite;
+        SpriteObject.GetComponent<SpriteRenderer>().sprite = attackingSprite;
         yield return new WaitForSeconds(attackTime);
     }
     
+
 }
