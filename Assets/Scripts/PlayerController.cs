@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     [SerializeField] public int lifes;
     [SerializeField] private Text loseText;
     [SerializeField] bool canGetHit;
+    [SerializeField] public bool gotHit;
 
     //sound
     [SerializeField] AudioSource source;
@@ -37,6 +38,8 @@ public class Player : MonoBehaviour
 
     private void Start() {
         canGetHit = true;
+        gotHit = false;
+        lifes = 3;
         rb = GetComponent<Rigidbody2D>();
         airStorage = maxAirStorage;
     }
@@ -96,6 +99,11 @@ public class Player : MonoBehaviour
             loseText.enabled = true;
             StartCoroutine(WaitThenMenu());
 
+        }
+
+        if(gotHit){
+            StartCoroutine(GetHit());
+            gotHit = false;
         }
         
     }
@@ -209,16 +217,24 @@ public class Player : MonoBehaviour
           SceneManager.LoadScene(0); //return to menu
     }
 
-    public void GetHit(){
-        lifes -= 1;
-        canGetHit = false;
-        Color tmp  = spriteObj.GetComponent<SpriteRenderer>().color;
-        Color blank = tmp;
-        tmp.a = 0f;
-        spriteObj.GetComponent<SpriteRenderer>().color = blank;
-        spriteObj.GetComponent<SpriteRenderer>().color = tmp;
-        spriteObj.GetComponent<SpriteRenderer>().color = blank;
-        spriteObj.GetComponent<SpriteRenderer>().color = tmp;
-        canGetHit = true;
+    /*
+    public void StartGetHit(){
+        StartCoroutine(StartGetHit());
+    }*/
+
+    IEnumerator GetHit(){
+        if(canGetHit){
+            Color tmp = spriteObj.GetComponent<SpriteRenderer>().color;
+            Color blank = tmp;
+            blank.a = 0f;
+
+            lifes -= 1;
+            canGetHit = false;
+            spriteObj.GetComponent<SpriteRenderer>().color = blank;
+            yield return new WaitForSeconds(0.3f);
+            spriteObj.GetComponent<SpriteRenderer>().color = tmp;
+            canGetHit = true;
+        }else
+            yield return new WaitForSeconds(0f);
     }
 }

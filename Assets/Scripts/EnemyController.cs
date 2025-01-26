@@ -14,10 +14,10 @@ public class EnemyController : MonoBehaviour
         if(other.collider.TryGetComponent(out Bubble bubble)){
             bubble.Pop();
         }
-        /*
-        if(other.collider.CompareTag("Player")){
-            other.gameObject.lifes-= 1;
-        }*/
+        
+        if(other.collider.TryGetComponent(out Player player)){
+            player.gotHit = true;
+        }
     }
 
 

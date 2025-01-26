@@ -9,7 +9,7 @@ public class MineController : MonoBehaviour
             bubble.Pop();
         }
         if(other.collider.TryGetComponent(out Player player)){
-            player.lifes -= 1;
+            player.gotHit = true;
             Destroy(gameObject);
 
         }
