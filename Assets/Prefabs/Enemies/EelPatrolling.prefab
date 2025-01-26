@@ -224,6 +224,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.68
       objectReference: {fileID: 0}
+    - target: {fileID: 368133038926786415, guid: 5377a0d895573974aa5ab801e20e4606, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137566542078959170, guid: 5377a0d895573974aa5ab801e20e4606, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2839623069417587017, guid: 5377a0d895573974aa5ab801e20e4606, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3027809875759264669, guid: 5377a0d895573974aa5ab801e20e4606, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.55
@@ -235,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 4112393965223052141, guid: 5377a0d895573974aa5ab801e20e4606, type: 3}
       propertyPath: m_Name
       value: PatrolLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079937995457263300, guid: 5377a0d895573974aa5ab801e20e4606, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9115728638209456478, guid: 5377a0d895573974aa5ab801e20e4606, type: 3}
       propertyPath: m_LocalPosition.x

@@ -145,7 +145,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -199,6 +199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 0
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  speed: 0
 --- !u!114 &3338035615591086794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +220,6 @@ MonoBehaviour:
   speed: 2
   attackCooldown: 2
   attackDuration: 2
-  GameObject: {fileID: 1455607401346948908}
+  SpriteObject: {fileID: 0}
   baseSprite: {fileID: -3469748194368916444, guid: 4bc111af0f2a79a4dbe68ccd82172a5d, type: 3}
   attackingSprite: {fileID: -338069371386838567, guid: 2b85669b5b27437449bf78561c6dc2aa, type: 3}
