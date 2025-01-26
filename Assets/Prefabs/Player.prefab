@@ -55,6 +55,7 @@ MonoBehaviour:
   speed: 3
   gunRange: 5
   pushForce: 2
+  maxAirStorage: 1000
   source: {fileID: 1673073598348036822}
   blowBubble: {fileID: 8300000, guid: a7c8412185638874bb7e2487ff086269, type: 3}
   growBubble: {fileID: 0}
@@ -71,7 +72,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

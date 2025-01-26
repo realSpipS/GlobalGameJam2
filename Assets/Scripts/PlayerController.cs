@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     GameObject currentBubble;
     Rigidbody2D rb;
 
+    [SerializeField] private int lifes;
+
     //sound
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip blowBubble;
@@ -81,6 +83,10 @@ public class Player : MonoBehaviour
                 ReleaseBubble();
             }        
             fire2Pressed = false;    
+        }
+
+        if(lifes <= 0){
+            //fine gioco
         }
         
     }
