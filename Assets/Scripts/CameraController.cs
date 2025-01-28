@@ -3,8 +3,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform target;
-    [SerializeField] Transform finish;
-    [SerializeField] float offset = 3.5f;
+    [SerializeField] Transform downLimit;
+    [SerializeField] Transform upLimit;
     [SerializeField] float speed = 2;
 
     // Update is called once per frame
@@ -15,9 +15,15 @@ public class CameraController : MonoBehaviour
             transform.position +=  new Vector3(0, dist, 0) * Time.deltaTime * speed;
         }
 
-        if (finish){
-            if(transform.position.y >= finish.position.y - offset){
-                transform.position = new Vector3(transform.position.x, finish.position.y - offset, -10);
+        if (upLimit){
+            if(transform.position.y > upLimit.position.y){
+                transform.position = upLimit.position;
+            }
+        }
+
+        if (downLimit){
+            if(transform.position.y < downLimit.position.y){
+                transform.position = downLimit.position;
             }
         }
     }

@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_EdgeRadius
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4580433687212138491, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
+      propertyPath: value
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4715163759008131150, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
       propertyPath: m_Name
       value: Chest

@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4580433687212138491, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
+      propertyPath: value
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4715163759008131150, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
       propertyPath: m_Name
-      value: Relic (1) Variant
+      value: Amphora
       objectReference: {fileID: 0}
     - target: {fileID: 4911665309875671447, guid: e20ead5d332049c42a663eb861cf8929, type: 3}
       propertyPath: m_Sprite

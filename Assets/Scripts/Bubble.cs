@@ -5,6 +5,7 @@ public class Bubble : MonoBehaviour
 {
     [SerializeField] float speed = 1;
     [SerializeField] Sprite popSprite;
+    [SerializeField] bool stationary = false;
     GameObject relic = null;
 
     [SerializeField] AudioClip popSfx;
@@ -17,7 +18,8 @@ public class Bubble : MonoBehaviour
 
     private void FixedUpdate() {
         //Vector3 newPos = Vector3(transform.position.x, transform.position.y, 0);
-        transform.position += Vector3.up * speed * Time.deltaTime;
+        if(!stationary)
+            transform.position += Vector3.up * speed * Time.deltaTime;
 
         if(relic){
             relic.transform.position = transform.position;
@@ -49,6 +51,7 @@ public class Bubble : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.collider.TryGetComponent(out Bubble bubble)){
             BubbleManager.instance.AddContact(gameObject);
+            stationary = false;
         }
 
         else if(other.gameObject.CompareTag("Relic") && !relic){
@@ -60,6 +63,7 @@ public class Bubble : MonoBehaviour
                 relic = other.gameObject;
                 relic.GetComponent<Collider2D>().isTrigger = true;
                 relic.GetComponent<Relic>().SetBubble(gameObject);
+                stationary = false;
             } 
             else{
                 Pop();

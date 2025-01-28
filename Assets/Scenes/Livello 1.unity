@@ -138,6 +138,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (6)
@@ -282,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770144189785349976, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: -2.39
       objectReference: {fileID: 0}
     - target: {fileID: 2770144189785349976, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
       propertyPath: m_LocalPosition.z
@@ -320,6 +324,10 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4727267375493255358, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
+      propertyPath: orthographic size
+      value: 6.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5312431247112221240, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
       propertyPath: finish
       value: 
@@ -332,6 +340,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1168586511}
+    - target: {fileID: 5312431247112221240, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
+      propertyPath: upLimit
+      value: 
+      objectReference: {fileID: 1813664703}
+    - target: {fileID: 5312431247112221240, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
+      propertyPath: downLimit
+      value: 
+      objectReference: {fileID: 1813664704}
     - target: {fileID: 6978521373660596466, guid: bc54994e63eda2f4abfc3ba710340a08, type: 3}
       propertyPath: m_CameraType
       value: 0
@@ -406,6 +422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (5)
@@ -475,6 +495,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (8)
@@ -544,6 +568,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (3)
@@ -613,6 +641,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (2)
@@ -796,6 +828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (7)
@@ -1184,6 +1220,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (1)
@@ -1253,6 +1293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble (4)
@@ -1395,6 +1439,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856081436142933963, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
+      propertyPath: stationary
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 861938081356932860, guid: 2d0aec0b29a9dfc4098d8537b7396937, type: 3}
       propertyPath: m_Name
       value: Bubble
@@ -1562,6 +1610,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
+--- !u!4 &1813664703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7323859837733801491, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
+  m_PrefabInstance: {fileID: 1813664702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1813664704 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7700803702826064923, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}
+  m_PrefabInstance: {fileID: 1813664702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2050855403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1381889834803824467, guid: 8867457acc9af4e48883abd438a2e37b, type: 3}

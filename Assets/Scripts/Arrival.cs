@@ -24,7 +24,7 @@ public class Arrival : MonoBehaviour
 
         if(other.gameObject.TryGetComponent(out Player player)){
             int currScene = SceneManager.GetActiveScene().buildIndex;
-            if(currScene == 3){
+            if(currScene == 4){
                 UIManager.instance.EndGame();
             }
             else{
@@ -38,7 +38,7 @@ public class Arrival : MonoBehaviour
     IEnumerator EndGame(){
         yield return new WaitForSeconds(4);
         int currScene = SceneManager.GetActiveScene().buildIndex;
-        if(currScene == 3){
+        if(currScene == 4){
             SceneManager.LoadScene(0);
         }
         else{
