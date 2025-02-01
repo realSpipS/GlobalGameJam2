@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
             UIManager.instance.Menu();
         }
         
-        if(Input.GetButtonDown("Fire1")){
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire3")){
             if(!blowing){
                 source.loop = true;
                 source.clip = blowBubble;
@@ -80,7 +80,8 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(Input.GetButtonUp("Fire1")){
+        if(Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire3"))
+        {
             if(blowing){
                 source.loop = false;
                 blowing = false;
@@ -172,7 +173,7 @@ public class Player : MonoBehaviour
             if (hit){
                 if (hit.collider.TryGetComponent(out Bubble bubble)){
                     hit.transform.localScale -= Vector3.one * 0.01f;
-                    IncAir(1);
+                    IncAir(1);                                                                                  //////////
                     if (hit.transform.localScale.x < 0.5f) Destroy(bubble.gameObject);
                 }
             }
